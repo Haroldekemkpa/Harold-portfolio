@@ -27,24 +27,24 @@ const Navbar = () => {
       {/* DESKTOP */}
       <nav
         className={`${
-          scrolled ? "bg-white shadow-md z-40" : "bg-transparent"
+          scrolled ? "bg-[#111827] shadow-md z-40" : "bg-transparent"
         } hidden lg:flex  px-20 py-4 text-black justify-between items-center transition-colors duration-300 ease-in-out fixed top-0 left-0 w-full`}
       >
         <div className="text-4xl font-bold text-orange-600 border-1 border-orange-600 rounded p-5">
           <span>HE</span>
         </div>
         <div>
-          <ul className="flex space-x-4 uppercase">
-            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:mb-4 transition-all duration-300 ease-in-out">
+          <ul className="flex space-x-6 uppercase">
+            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
               Home
             </li>
-            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:mb-4 transition-all duration-300 ease-in-out">
+            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
               About
             </li>
-            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:mb-4 transition-all duration-300 ease-in-out">
+            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
               Projects
             </li>
-            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:mb-4 transition-all duration-300 ease-in-out">
+            <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
               Contact
             </li>
           </ul>
@@ -61,15 +61,43 @@ const Navbar = () => {
 
       {/* MOBILE NAV BAR */}
 
-      <nav className="lg:hidden flex flex-row justify-between px-8 py-2">
-        <div className="text-4xl font-bold text-orange-600 border-1 border-orange-600 rounded p-5">
+      <nav className="relative lg:hidden flex flex-row justify-between px-8 py-2 bg-[#111827] top-0 right-0 ">
+        <div className="text-4xl font-bold text-white border-1 rounded p-5">
           <span>HE</span>
         </div>
 
-        <button onClick={handleIsOpen} className="text-orange-600 text-4xl">
+        <button onClick={handleIsOpen} className="text-[#2563eb] text-4xl">
           {" "}
           <FontAwesomeIcon icon={faBars} />{" "}
         </button>
+
+        {isOpen && (
+          <div className="absolute flex-col items-center justify-center space-y-6 top-24 left-0 bg-[#111827] px-4 py-8 w-full transition-all duration-300 ease-in-out">
+            <ul className="flex-col space-y-6 uppercase text-white text-center items-center ">
+              <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
+                Home
+              </li>
+              <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
+                About
+              </li>
+              <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
+                Projects
+              </li>
+              <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
+                Contact
+              </li>
+            </ul>
+
+            <div className="flex flex-col space-y-4 px-4 py- ">
+              <button className="px-3 py-2 rounded text-white bg-[#2563eb] hover:text-orange-600 hover:bg-transparent hover:border-1 border-solid border-orange-600">
+                Contact me
+              </button>
+              <button className="px-3 py-2 rounded text-[#2563eb] border-1 border-[#2563eb] rounded hover:text-white hover:bg-[#2563eb]">
+                Download CV
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
     </>
   );
