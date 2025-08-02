@@ -1,13 +1,21 @@
 import React from "react";
 import assets from "../assets/assets";
+import styles from "../stylecomponents/herocomponent.module.css";
 
 const Herobanner = () => {
   return (
     <>
       <div
-        className="relative h-screen flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${assets.hero})` }}
-      ></div>
+        className={`${styles.hero} flex flex-col justify-center align-center`}
+      >
+        <div>
+          <h1>
+            {" "}
+            <span>Hello world</span> I'm Harold O. Ekemkpa{" "}
+            <span>A fullstack web Developer</span>
+          </h1>
+        </div>
+      </div>
     </>
   );
 };
