@@ -3,7 +3,7 @@ import assets from "../assets/assets.js";
 
 const Bio = () => {
   return (
-    <div className="flex flex-col space-y-6 md:flex-row items-start justify-center py-20 px-10 md:py-40 md:px-40">
+    <div className="flex flex-col space-y-6 lg:flex-row items-start justify-center py-20 px-10 md:py-40 lg:px-40">
       <div className="flex-1">
         <img
           src={assets.image}
@@ -40,6 +40,23 @@ const Bio = () => {
           and lead collaborative project teams across frontend and backend
           track.
         </p>
+        <div className="my-8 flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 ">
+          <a
+            href="https://www.linkedin.com/in/harold-ekemkpa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#10b981] px-4 py-3 text-center text-white uppercase"
+          >
+            connect with me{" "}
+          </a>
+          <a
+            href="#hire"
+            rel="noopener noreferrer"
+            className="text-white bg-[#f97316] px-4 py-3 text-center text-white uppercase "
+          >
+            hire me
+          </a>
+        </div>
       </div>
     </div>
   );

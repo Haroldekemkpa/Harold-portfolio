@@ -14,6 +14,7 @@ import php from "./php.png";
 import reactImg from "./react.jpeg";
 import tailwind from "./tailwind.jpeg";
 import wordpress from "./wordpress.jpeg";
+import node from "./node.jpeg";
 
 export default {
   hero,
@@ -32,4 +33,5 @@ export default {
   reactImg,
   tailwind,
   wordpress,
+  node,
 };

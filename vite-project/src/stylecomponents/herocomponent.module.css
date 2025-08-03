@@ -2,13 +2,13 @@
   --bg-one: #0f172a;
   --accent-one: #3b82f6;
   --light-one: #f8fafc;
-  --cool-grey: #64748b;
-  --highlight: #10b981;
+  --cool-grey: #64748b; /* ✅ */
+  --highlight: #10b981; /* ✅*/
 
   /* two */
 
   --clean-white: #ffffff;
-  --charcoal-black: #111827;
+  --charcoal-black: #111827; /* ✅*/
   --accent-two: #2563eb;
   --highlight-two: #f59e0b; /*Warm gold (for emphasis or icons)*/
   --border: #e5e7eb; /*Light gray*/
@@ -74,3 +74,4 @@
   animation: slideUpFade 0.8s ease-out both;
   animation-delay: 0.5s;
 }
+
