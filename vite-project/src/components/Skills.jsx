@@ -5,20 +5,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Skills = () => {
-  // let settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 3,
-  // };
-
   let settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 3,
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1024,
@@ -57,6 +52,7 @@ const Skills = () => {
     { name: "Laravel", image: assets.laravel },
     { name: "MongoDB", image: assets.mongodb },
     { name: "MySql", image: assets.mysql },
+    { name: "Git", image: assets.git },
   ];
 
   return (
@@ -70,7 +66,11 @@ const Skills = () => {
               className="w-40 lg:h-40 bg-white flex flex-col items-center justify-center p-4"
             >
               <div className="">
-                <img src={cur.image} alt={cur.name} className="lg:w-40" />
+                <img
+                  src={cur.image}
+                  alt={cur.name}
+                  className="lg:w-40 rounded shadow-lg"
+                />
               </div>
               {/* <div>
                 <p className="text-center">{cur.name}</p>

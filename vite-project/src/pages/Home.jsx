@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Herobanner from "../components/Herobanner";
 import Bio from "../components/Bio";
 import Skills from "../components/Skills";
+import TestimonialSection from "../components/Testimonials";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Herobanner />
       <Bio />
       <Skills />
+      <TestimonialSection />
     </>
   );
 };

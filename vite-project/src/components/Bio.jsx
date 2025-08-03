@@ -45,14 +45,14 @@ const Bio = () => {
             href="https://www.linkedin.com/in/harold-ekemkpa/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#10b981] px-4 py-3 text-center text-white uppercase"
+            className="bg-[#10b981] px-4 py-3 text-center text-white uppercase rounded shadow-md"
           >
             connect with me{" "}
           </a>
           <a
             href="#hire"
             rel="noopener noreferrer"
-            className="text-white bg-[#f97316] px-4 py-3 text-center text-white uppercase "
+            className="text-white bg-[#f97316] px-4 py-3 text-center text-white uppercase rounded shadow-md "
           >
             hire me
           </a>
