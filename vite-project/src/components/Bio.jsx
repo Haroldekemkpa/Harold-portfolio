@@ -1,0 +1,48 @@
+import React from "react";
+import assets from "../assets/assets.js";
+
+const Bio = () => {
+  return (
+    <div className="flex flex-col space-y-6 md:flex-row items-start justify-center py-20 px-10 md:py-40 md:px-40">
+      <div className="flex-1">
+        <img
+          src={assets.image}
+          alt="harolds-img"
+          className="w-full md:w-lg h-lg rounded"
+        />
+      </div>
+      <div className="flex-1">
+        <h2 className="text-4xl font-bold mb-2 ">Bio</h2>
+        <p className="mb-4 leading-8">
+          I'm Harold Ekemkpa, a full-stack developer with a background in
+          Geology and a passion for solving real-world problems through
+          technology. I build web applications using the MERN stack, Laravel,
+          and Express MVC frameworks, with a strong focus on data security and
+          role-based systems.
+        </p>
+        <p className="mb-4 leading-8">
+          My journey in tech began with a simple fascination for code, but it
+          quickly expanded into system architecture, product thinking, and a
+          drive for continuous growth. I work primarily with{" "}
+          <strong>
+            {" "}
+            HTML5, CSS, Bootstrap.css, Tailwind CSS, JavaScript, React.js,
+            Node.js, Express.js, PHP, Laravel,{" "}
+          </strong>{" "}
+          while also handling backend operations using{" "}
+          <strong> MongoDB or mySql database and RESTful APIs.</strong> Whether
+          I’m developing clean, responsive UIs or building scalable full-stack
+          applications, I bring both creative energy and technical depth to the
+          table.
+        </p>
+        <p className="leading-8">
+          Beyond code, I also mentor and tech learners through hands-on training
+          and lead collaborative project teams across frontend and backend
+          track.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Bio;

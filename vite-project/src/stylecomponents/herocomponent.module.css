@@ -37,7 +37,7 @@
       rgb(31, 41, 55, 0.3),
       rgb(31, 41, 55, 0.3)
     ),
-    url("../assets/hero-1.webp");
+    url("../assets/hero-bg.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -46,4 +46,31 @@
 
 .heroText {
   font-family: "Courier New", Courier, monospace;
+}
+
+/* herocomponent.module.css */
+
+@keyframes slideUpFade {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.heroText {
+  animation: slideUpFade 0.8s ease-out both;
+  animation-delay: 0.5s;
+}
+
+.heroTextDelay1 {
+  animation: slideUpFade 0.8s ease-out both;
+}
+
+.heroTextDelay2 {
+  animation: slideUpFade 0.8s ease-out both;
+  animation-delay: 0.5s;
 }
