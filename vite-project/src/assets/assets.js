@@ -15,6 +15,7 @@ import reactImg from "./react.jpeg";
 import tailwind from "./tailwind.jpeg";
 import wordpress from "./wordpress.jpeg";
 import node from "./node.jpeg";
+import gitSvg from "./gitsvg.svg";
 
 export default {
   hero,
@@ -34,4 +35,5 @@ export default {
   tailwind,
   wordpress,
   node,
+  gitSvg,
 };
