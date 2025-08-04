@@ -1,25 +1,54 @@
-import { createHire } from "../model/hiremeModel";
+import { createHire } from "../model/hiremeModel.js";
+import {
+  clientEmailTemplate,
+  adminTemplate,
+  transporter,
+} from "../utilities/mailer.js";
 
 export const createHireController = async (req, res) => {
   try {
-    const { client, email, project_deteails } = req.body;
+    const { client, email, project_details } = req.body;
 
-    if (!client || !email || !project_deteails) {
-      return res.status(401).json({ message: "all fields are required" });
+    if (!client || !email || !project_details) {
+      return res.status(401).json({ message: "All fields are required" });
     }
 
-    await createHire({ client, email, project_deteails });
+    await createHire({ client, email, project_details });
 
-    
+    const createdAt = new Date().toLocaleString();
+
+    // Format email templates with dynamic values
+    const clientHTML = clientEmailTemplate.replace("{{name}}", client);
+    const adminHTML = adminTemplate
+      .replace("{{client}}", client)
+      .replace("{{email}}", email)
+      .replace("{{created_at}}", createdAt)
+      .replace("{{project_details}}", project_details);
+
+    // Send email to client
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "Thanks for reaching out!",
+      html: clientHTML,
+    });
+
+    // Send email to admin
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER, // your admin email
+      subject: `New Hire Request from ${client}`,
+      html: adminHTML,
+    });
 
     return res.status(200).json({
       success: true,
-      message: "Hire request sent successfully ",
+      message: "Hire request sent successfully",
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "something went wrong",
+      message: "Something went wrong",
       error: error.message,
     });
   }

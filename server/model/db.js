@@ -5,7 +5,7 @@ dotenv.config();
 
 async function createPool() {
   try {
-    db = mysql.createPool({
+    const pool = mysql.createPool({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
@@ -17,6 +17,8 @@ async function createPool() {
     });
 
     console.log("database connection successfull");
+
+    return pool;
   } catch (error) {
     console.log("An error occured: ", error);
     throw error;

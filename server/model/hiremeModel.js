@@ -6,12 +6,12 @@ export const createHireMeTable = async () => {
   try {
     await db.query(`
             CREATE TABLE IF NOT EXISTS hire_request (
-            id INT AUTO_INCREAMENT PRIMARY KEY,
+            id INT AUTO_INCREMENT PRIMARY KEY,
             client VARCHAR(255),
             email VARCHAR(255),
             project_details TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            updated_at TIMESTAMP DEFAULT CURRNET_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+            updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             ) 
             `);
     console.log("hire_request table created successfully");
@@ -30,7 +30,11 @@ export const createHire = async (hire) => {
           VALUE(?, ?, ?)
         `;
 
-    await db.query(query, [client, email, project_details]);
-    console.log("")
-  } catch (error) {}
+    const [results] = await db.query(query, [client, email, project_details]);
+    console.log(" hire request successfull ");
+    return results;
+  } catch (error) {
+    console.log("something went wrong: ", error);
+    throw error;
+  }
 };
