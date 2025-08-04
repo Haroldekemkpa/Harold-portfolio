@@ -4,11 +4,12 @@ import {
   deleteTestimonialController,
   createTestimonialController,
 } from "../controllers/testimonialController.js";
+import { uploadFile } from "../middleware/multerMiddleWare.js";
 
 const testimonialRouter = express.Router();
 
 testimonialRouter.get("/", getAllTestimonialController);
 testimonialRouter.delete("/delete/:id", deleteTestimonialController);
-testimonialRouter.post("/create", createTestimonialController);
+testimonialRouter.post("/create", uploadFile, createTestimonialController);
 
 export default testimonialRouter;
