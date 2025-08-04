@@ -1,10 +1,14 @@
 import express from "express";
-import { createHireController } from "../controllers/hiremeController.js";
+import {
+  createHireController,
+  getAllHireController,
+} from "../controllers/hiremeController.js";
 
 const hireRouter = express.Router();
 
 // hireRouter.get("/", getAllHireRequest);
 
 hireRouter.post("/create", createHireController);
+hireRouter.get("/", getAllHireController);
 
 export default hireRouter;

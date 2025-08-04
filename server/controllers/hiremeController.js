@@ -1,4 +1,4 @@
-import { createHire } from "../model/hiremeModel.js";
+import { createHire, getAllHireRequest } from "../model/hiremeModel.js";
 import {
   clientEmailTemplate,
   adminTemplate,
@@ -48,7 +48,20 @@ export const createHireController = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Something went wrong",
+      message: "Error sending hire request try again",
+      error: error.message,
+    });
+  }
+};
+
+export const getAllHireController = async (req, res) => {
+  try {
+    const hires = await getAllHireRequest();
+    return res.status(200).json({ success: true, hires });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "error getting hire requests tryagain",
       error: error.message,
     });
   }

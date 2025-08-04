@@ -38,3 +38,14 @@ export const createHire = async (hire) => {
     throw error;
   }
 };
+
+export const getAllHireRequest = async () => {
+  try {
+    const [rows] = await db.query(`SELECT * FROM hire_request`);
+    console.log("something went wrong");
+    return rows;
+  } catch (error) {
+    console.log("error message: ", error);
+    throw error;
+  }
+};
