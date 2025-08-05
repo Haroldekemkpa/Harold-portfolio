@@ -22,7 +22,7 @@ export const createAdminController = async (req, res) => {
     }
 
     // Check name and email condition
-    if (name !== "Harold Ekemkpa" || email !== "haroldonyebuchi507@gmail.com") {
+    if (name !== process.env.ADMIN_NAME || email !== process.env.ADMIN_MAIL) {
       return res.status(403).json({
         success: false,
         message: "Name and email invalid",
@@ -84,10 +84,10 @@ export const loginAdminController = async (req, res) => {
 
     // Generate JWT
     const token = signToken({
-        id: admin.id,
-        email: admin.email,
-        role: admin.role
-    })
+      id: admin.id,
+      email: admin.email,
+      role: admin.role,
+    });
 
     // Return success response
     return res.status(200).json({
