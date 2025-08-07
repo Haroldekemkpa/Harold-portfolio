@@ -3,7 +3,10 @@ import assets from "../assets/assets.js";
 
 const Bio = () => {
   return (
-    <div className="flex flex-col space-y-6 lg:flex-row items-start justify-center py-20 px-10 md:py-40 lg:px-40">
+    <div
+      className="flex flex-col space-y-6 lg:flex-row items-start justify-center py-20 px-10 md:py-40 lg:px-40"
+      id="about"
+    >
       <div className="flex-1">
         <img
           src={assets.image}

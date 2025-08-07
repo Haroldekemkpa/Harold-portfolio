@@ -23,17 +23,25 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  const allowedTypes = /Jpeg|jpg|png|webp/;
-  const extname = allowedTypes.test(
-    path.extname(file.originalname).toLocaleLowerCase()
-  );
-  const mimetype = allowedTypes.test(file.mimetype);
-  if (extname && mimetype) {
+  const allowedMimeTypes = [
+    "image/jpeg",
+    "image/jpg",
+    "image/png",
+    "image/webp",
+  ];
+  const allowedExtensions = [".jpeg", ".jpg", ".png", ".webp"];
+
+  const fileExt = path.extname(file.originalname).toLowerCase();
+  const isMimeAllowed = allowedMimeTypes.includes(file.mimetype);
+  const isExtAllowed = allowedExtensions.includes(fileExt);
+
+  if (isMimeAllowed && isExtAllowed) {
     return cb(null, true);
   }
+
   cb(
     new Error(
-      "Error: file upload only supports the following filetypes - jpeg, jpg, png, webp"
+      "Error: file upload only supports jpeg, jpg, png, and webp formats"
     )
   );
 };

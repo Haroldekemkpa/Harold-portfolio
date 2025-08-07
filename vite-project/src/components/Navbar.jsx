@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const handleIsOpen = () => {
     setIsOpen((prev) => !prev);
-    console.log("is open");
   };
 
   useEffect(() => {
@@ -21,6 +20,12 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleViewResume = (e) => {
+    e.preventDefault();
+    // console.log("Download clicked");
+    window.open("/Harold_resume.pdf", "_blank");
+  };
 
   return (
     <>
@@ -36,26 +41,40 @@ const Navbar = () => {
         <div>
           <ul className="flex space-x-6 uppercase text-white">
             <li className="hover:text-[#10b981] hover:border-b-2 border-[#10b981] hover:pb-4 transition-all duration-300 ease-in-out">
-              Home
+              <a href="#home">HOME</a>
             </li>
             <li className="hover:text-[#10b981] hover:border-b-2 border-[#10b981] hover:pb-4 transition-all duration-300 ease-in-out">
-              About
+              <a href="#about">ABOUT</a>
             </li>
             <li className="hover:text-[#10b981] hover:border-b-2 border-[#10b981] hover:pb-4 transition-all duration-300 ease-in-out">
-              Projects
+              <a href="#resume">RESUME</a>
             </li>
             <li className="hover:text-[#10b981] hover:border-b-2 border-[#10b981] hover:pb-4 transition-all duration-300 ease-in-out">
-              Contact
+              <a href="#testimonial"> TESTIMONIAL </a>
+            </li>
+            <li className="hover:text-[#10b981] hover:border-b-2 border-[#10b981] hover:pb-4 transition-all duration-300 ease-in-out">
+              <a href="#testimonial"> Hire me </a>
             </li>
           </ul>
         </div>
         <div className="flex space-x-4">
           <button className="px-3 py-2 rounded text-white bg-[#10b981] hover:text-[#fff] hover:bg-transparent hover:border-1 border-solid border-[#10b981]">
-            Contact me
+            <a
+              href="https://wa.link/cgnuvz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CONTACT ME{" "}
+            </a>
           </button>
-          <button className="px-3 py-2 rounded text-white border-1 border-[#10b981] rounded hover:text-white hover:bg-[#10b981]">
+          <a
+            // href="/Harold_resume.pdf"
+            // download
+            onClick={handleViewResume}
+            className="px-3 py-2 rounded text-white border border-[#10b981] hover:text-white hover:bg-[#10b981] inline-block"
+          >
             Download CV
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -75,16 +94,19 @@ const Navbar = () => {
           <div className="absolute z-40 flex-col items-center justify-center space-y-6 top-20 left-0 bg-[#111827] px-4 py-8 w-full transition-all duration-300 ease-in-out">
             <ul className="flex-col space-y-6 uppercase text-white text-center items-center ">
               <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
-                Home
+                <a href="#home">HOME</a>
               </li>
               <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
-                About
+                <a href="#about">ABOUT</a>
               </li>
               <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
-                Projects
+                <a href="#resume">RESUME</a>
               </li>
               <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
-                Contact
+                <a href="#testimonial">TESTIMONIAL</a>
+              </li>
+              <li className="hover:text-orange-600 hover:border-b-2 border-orange-600 hover:pb-4 transition-all duration-300 ease-in-out">
+                <a href="#testimonial">Hire me</a>
               </li>
             </ul>
 
@@ -92,9 +114,14 @@ const Navbar = () => {
               <button className="px-3 py-2 rounded text-white bg-[#2563eb] hover:text-orange-600 hover:bg-transparent hover:border-1 border-solid border-orange-600">
                 Contact me
               </button>
-              <button className="px-3 py-2 rounded text-[#2563eb] border-1 border-[#2563eb] rounded hover:text-white hover:bg-[#2563eb]">
+
+              <a
+                href="/Harold_resume.pdf"
+                onClick={handleViewResume}
+                className="px-3 py-2 rounded text-white border border-[#10b981] hover:text-white hover:bg-[#10b981] inline-block"
+              >
                 Download CV
-              </button>
+              </a>
             </div>
           </div>
         )}

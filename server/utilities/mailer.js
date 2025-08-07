@@ -32,7 +32,7 @@ export const clientEmailTemplate = `
         <p>In the meantime, feel free to explore my work or connect with me on LinkedIn or GitHub.</p>
         <p>Warm regards,<br><strong>Harold Onyebuchi Ekemkpa</strong></p>
         <div class="footer">
-        <p>Portfolio: <a href="https://github.com/Haroldekemkpa/Harold-portfolio">find me on Github</a></p>
+        <p>Portfolio: <a href="https://github.com/Haroldekemkpa">find me on Github</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/harold-ekemkpa/">connect with me on linkedin</a></p>
         </div>
     </div>

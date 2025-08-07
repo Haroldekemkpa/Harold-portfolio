@@ -10,7 +10,7 @@ export const createTestimonialController = async (req, res) => {
     const profile_img = req.file?.filename || null;
 
     if (!name || !title || !comment) {
-      return res.status(401).json({
+      return res.status(400).json({
         error: "all fields are requires",
       });
     }
@@ -53,7 +53,7 @@ export const deleteTestimonialController = async (req, res) => {
       return res.status(404).json(result);
     }
 
-    return res.status(200).json(result);
+    return res.status(201).json(result);
   } catch (error) {
     console.error("Error in deleteTestimonialController:", error);
     return res.status(500).json({
