@@ -7,34 +7,34 @@ export const createHireMeTable = async () => {
     await db.query(`
             CREATE TABLE IF NOT EXISTS hire_request (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            client VARCHAR(255),
-            email VARCHAR(255),
-            project_details TEXT,
+            client VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            project TEXT NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
             ) 
             `);
     console.log("hire_request table created successfully");
   } catch (error) {
-    console.log(error, " : something went wrong");
+    console.error(error, " : something went wrong");
     throw error;
   }
 };
 
 export const createHire = async (hire) => {
   try {
-    const { client, email, project_details } = hire;
+    const { client, email, project } = hire;
 
     const query = `
-          INSERT INTO hire_request (client, email, project_details) 
+          INSERT INTO hire_request (client, email, project) 
           VALUE(?, ?, ?)
         `;
 
-    const [results] = await db.query(query, [client, email, project_details]);
+    const [results] = await db.query(query, [client, email, project]);
     console.log(" hire request successfull ");
     return results;
   } catch (error) {
-    console.log("something went wrong: ", error);
+    console.error("something went wrong: ", error);
     throw error;
   }
 };
@@ -45,7 +45,7 @@ export const getAllHireRequest = async () => {
     console.log("something went wrong");
     return rows;
   } catch (error) {
-    console.log("error message: ", error);
+    console.error("error message: ", error);
     throw error;
   }
 };

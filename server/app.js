@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { createHireMeTable } from "./model/hiremeModel.js";
 import { createTestimonialTable } from "./model/testimonialModel.js";
 import { createAdminTable } from "./model/adminModel.js";
@@ -10,6 +11,7 @@ import testimonialRouter from "./routes/testimonialRoute.js";
 import adminRouter from "./routes/adminRoutes.js";
 const app = express();
 dotenv.config();
+app.use(cors());
 
 const PORT = process.env.PORT;
 app.use(express.json());

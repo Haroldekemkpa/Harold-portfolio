@@ -16,7 +16,7 @@ export const createTestimonialTable = async () => {
         `);
     console.log("testimonialS tale created successfully");
   } catch (error) {
-    console.log("something went wrong");
+    console.error("something went wrong");
     throw error;
   }
 };
@@ -36,7 +36,7 @@ export const createTestimonial = async (testimonial) => {
     console.log("comment submited succefully");
     return { success: true, message: "testimonial created successfully" };
   } catch (error) {
-    console.log("something went wrong");
+    console.error("something went wrong");
     throw error;
   }
 };
@@ -49,7 +49,7 @@ export const getTestimonial = async () => {
     console.log("get all testimonial request successful");
     return rows;
   } catch (error) {
-    console.log("something went wrong");
+    console.error("something went wrong");
     throw error;
   }
 };
@@ -67,7 +67,7 @@ export const deleteTestimonial = async (id) => {
     console.log(`Testimonial with id ${id} deleted successfully`);
     return { success: true, message: "Testimonial deleted" };
   } catch (error) {
-    console.log("Something went wrong while deleting the testimonial");
+    console.error("Something went wrong while deleting the testimonial");
     throw error;
   }
 };

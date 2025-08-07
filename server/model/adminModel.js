@@ -17,7 +17,7 @@ export const createAdminTable = async () => {
         `);
     console.log("Admin table created successful");
   } catch (error) {
-    console.log("Error in creating admin table: ", error);
+    console.error("Error in creating admin table: ", error);
     throw error;
   }
 };
@@ -31,7 +31,7 @@ export const createAdmin = async (admin) => {
     console.log("admin created successfully");
     return result;
   } catch (error) {
-    console.log("couldn't create admin");
+    console.error("couldn't create admin");
     throw error;
   }
 };
@@ -47,7 +47,7 @@ export const getAdminByEmail = async (email) => {
     console.log("admin loging sucessfull");
     return rows[0];
   } catch (error) {
-    console.log("Error getting admin");
+    console.error("Error getting admin");
     throw error;
   }
 };
@@ -65,7 +65,7 @@ export const deleteAdmin = async (id) => {
     console.log(`Admin with id: ${id} deleted sucessfully`);
     return { success: true, message: "admin deleted" };
   } catch (error) {
-    console.log("deleting error", error);
+    console.error("deleting error", error);
     throw error;
   }
 };
@@ -76,7 +76,7 @@ export const getAllAdmin = async () => {
     console.log("get all admins successful");
     return rows;
   } catch (error) {
-    console.log("Something went wrong: ", error);
+    console.error("Something went wrong: ", error);
     throw error;
   }
 };

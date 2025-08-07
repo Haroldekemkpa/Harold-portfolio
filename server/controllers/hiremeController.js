@@ -7,13 +7,13 @@ import {
 
 export const createHireController = async (req, res) => {
   try {
-    const { client, email, project_details } = req.body;
+    const { client, email, project } = req.body;
 
-    if (!client || !email || !project_details) {
-      return res.status(401).json({ message: "All fields are required" });
+    if (!client || !email || !project) {
+      return res.status(400).json({ message: "All fields are required" });
     }
 
-    await createHire({ client, email, project_details });
+    await createHire({ client, email, project });
 
     const createdAt = new Date().toLocaleString();
 
@@ -23,7 +23,7 @@ export const createHireController = async (req, res) => {
       .replace("{{client}}", client)
       .replace("{{email}}", email)
       .replace("{{created_at}}", createdAt)
-      .replace("{{project_details}}", project_details);
+      .replace("{{project_details}}", project);
 
     // Send email to client
     await transporter.sendMail({
@@ -41,7 +41,7 @@ export const createHireController = async (req, res) => {
       html: adminHTML,
     });
 
-    return res.status(200).json({
+    return res.status(201).json({
       success: true,
       message: "Hire request sent successfully",
     });
