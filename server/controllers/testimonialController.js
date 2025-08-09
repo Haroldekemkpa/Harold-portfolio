@@ -68,11 +68,11 @@ export const deleteTestimonialController = async (req, res) => {
 
 export const getAllTestimonialController = async (req, res) => {
   try {
-    const testimonial = await getTestimonial();
-    return res.status(200).json({ success: true, testimonial });
+    const testimonials = await getTestimonial();
+    return res.status(200).json({ success: true, testimonials });
   } catch (error) {
     return res.status(500).json({
-      sucess: false,
+      sucCess: false,
       message: "Error getting testimonials try again",
       error: error.message,
     });

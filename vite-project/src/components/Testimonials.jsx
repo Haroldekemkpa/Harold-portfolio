@@ -1,28 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { createContext } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const testimonials = [
-  {
-    name: "Chinonso U.",
-    role: "Frontend Developer",
-    image: "https://i.pravatar.cc/150?img=3",
-    text: "Working with Harold was a great experience. His attention to detail and dedication is unmatched.",
-  },
-  {
-    name: "Ada E.",
-    role: "Product Manager",
-    image: "https://i.pravatar.cc/150?img=5",
-    text: "He brought our vision to life flawlessly. Truly dependable and talented.",
-  },
-  {
-    name: "Emeka O.",
-    role: "UI/UX Designer",
-    image: "https://i.pravatar.cc/150?img=9",
-    text: "Harold understands the modern web. He delivered ahead of schedule and exceeded expectations.",
-  },
-];
+import { CommentContextAPI } from "../context/ContextApi";
+import assets from "../assets/assets";
 
 const settings = {
   dots: true,
@@ -51,6 +33,7 @@ const settings = {
 };
 
 const TestimonialCarousel = () => {
+  const { comments } = useContext(CommentContextAPI);
   return (
     <section className="bg-gray-100 py-16 px-4 md:px-20" id="testimonial">
       <div className="text-center mb-12">
@@ -63,26 +46,33 @@ const TestimonialCarousel = () => {
       </div>
 
       <Slider {...settings}>
-        {testimonials.map((t, index) => (
-          <div key={index} className="px-4 h-full">
-            <div className="bg-white h-full min-h-[320px] flex flex-col justify-between shadow-lg p-6 rounded-2xl text-center">
-              <div>
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-20 h-20 mx-auto rounded-full border-4 border-orange-400 object-cover mb-4"
-                />
-                <p className="text-gray-700 text-sm italic mb-4">"{t.text}"</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {t.name}
-                </h3>
-                <p className="text-sm text-orange-500">{t.role}</p>
+        {comments.length > 0 &&
+          comments.map((cur, index) => (
+            <div key={index} className="px-4 h-full">
+              <div className="bg-white h-full min-h-[320px] flex flex-col justify-between shadow-lg p-6 rounded-2xl text-center">
+                <div>
+                  <img
+                    src={
+                      cur.profile_img
+                        ? `http://localhost:3000/uploads/${cur.profile_img}`
+                        : `${assets.img}`
+                    }
+                    alt={cur.name}
+                    className="w-20 h-20 mx-auto rounded-full border-4 border-orange-400 object-cover mb-4"
+                  />
+                  <p className="text-gray-700 text-sm italic mb-4">
+                    "{cur.comment}"
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {cur.name}
+                  </h3>
+                  <p className="text-sm text-orange-500">{cur.title}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </Slider>
     </section>
   );

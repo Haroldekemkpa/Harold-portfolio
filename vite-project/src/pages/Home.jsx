@@ -5,8 +5,9 @@ import Bio from "../components/Bio";
 import Skills from "../components/Skills";
 import TestimonialSection from "../components/Testimonials";
 import Resume from "../components/Resume";
-import CTASection from "../components/Cta";
+// import CTASection from "../components/TestCta";
 import Footer from "../components/Footer";
+import TestCta from "../components/Cta";
 
 const Home = () => {
   return (
@@ -17,7 +18,8 @@ const Home = () => {
       <Skills />
       <Resume />
       <TestimonialSection />
-      <CTASection />
+      {/* <CTASection /> */}
+      <TestCta />
       <Footer />
     </>
   );
