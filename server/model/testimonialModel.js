@@ -25,7 +25,7 @@ export const createTestimonial = async (testimonial) => {
   try {
     const { name, title, comment, profile_img } = testimonial;
 
-    const query = `INSERT INTO testimonialS (name, title, comment, profile_img) VALUE(?, ?, ?, ?)`;
+    const query = `INSERT INTO testimonialS (name, title, comment, profile_img) VALUES(?, ?, ?, ?)`;
     const testimonials = await db.query(query, [
       name,
       title,
@@ -43,7 +43,7 @@ export const createTestimonial = async (testimonial) => {
 
 export const getTestimonial = async () => {
   try {
-    const query = `SELECT * FROM testimonials`;
+    const query = `SELECT * FROM testimonials ORDER BY created_at DESC`;
     const [rows] = await db.query(query);
 
     console.log("get all testimonial request successful");

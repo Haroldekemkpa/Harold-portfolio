@@ -13,7 +13,7 @@ const Comment = () => {
     title: "", // ✅ changed from role
     comment: "",
   });
-  const { refreshCommnets } = useContext(CommentContextAPI);
+  const { refreshComments } = useContext(CommentContextAPI);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -72,7 +72,7 @@ const Comment = () => {
       setCommentFormData({ name: "", title: "", comment: "" }); // ✅
       setPreview(null);
       setSelectedFile(null);
-      refreshCommnets;
+      refreshComments();
     } catch (error) {
       console.error("Error submitting comment:", error);
     } finally {
