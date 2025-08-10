@@ -1,15 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 import Home from "./pages/Home";
+import AdminLogin from "./pages/Login";
 import { CommentProvider } from "./context/ContextApi";
-function App() {
+
+export default function App() {
   return (
     <CommentProvider>
-      <Home />
+      <Router>
+        <Routes>
+          <Route path="/" element={<AdminLogin />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </Router>
     </CommentProvider>
   );
 }
-
-export default App;

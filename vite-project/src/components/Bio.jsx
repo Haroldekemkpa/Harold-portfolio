@@ -17,11 +17,11 @@ const Bio = () => {
       <div className="flex-1">
         <h2 className="text-4xl font-bold mb-2 ">Bio</h2>
         <p className="mb-4 leading-8">
-          I'm Harold Ekemkpa, a full-stack developer with a background in
-          Geology and a passion for solving real-world problems through
-          technology. I build web applications using the MERN stack, Laravel,
-          and Express MVC frameworks, with a strong focus on data security and
-          role-based systems.
+          I am a Full Stack Web Developer with two years plus of hands-on
+          experience at Sulphil Tech Hub and nearly a year at Total OBAGI as a
+          FullStack Developer, I have grown into an expert who doesn’t just
+          write codes but solves problems, design experiences, and contributes
+          to amazing and meaningful digital solutions.
         </p>
         <p className="mb-4 leading-8">
           My journey in tech began with a simple fascination for code, but it
@@ -39,9 +39,15 @@ const Bio = () => {
           table.
         </p>
         <p className="leading-8">
-          Beyond code, I also mentor and tech learners through hands-on training
-          and lead collaborative project teams across frontend and backend
-          track.
+          <span className="block font-bold">🔍 What motivates me? </span>
+          Creating tech that makes a difference. Writing elegant, maintainable
+          code. And growing as a developer, a teammate, and a lifelong learner.
+        </p>
+        <p className="leading-8">
+          <span className="block font-bold">🌍 What’s ahead? </span>
+          I’m looking for opportunities where I can stretch my skills,
+          contribute meaningfully, and work alongside teams that care deeply
+          about what they build.
         </p>
         <div className="my-8 flex flex-col md:flex-row md:space-x-4 md:space-y-0 space-y-4 ">
           <a

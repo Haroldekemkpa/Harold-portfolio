@@ -14,23 +14,28 @@ const Footer = () => {
         {/* Center: Navigation */}
         <ul className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium">
           <li>
+            <a href="#home" className="hover:text-orange-400">
+              Home
+            </a>
+          </li>
+          <li>
             <a href="#about" className="hover:text-orange-400">
               About
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-orange-400">
-              Projects
+            <a href="#resume" className="hover:text-orange-400">
+              Resume
             </a>
           </li>
           <li>
-            <a href="#skills" className="hover:text-orange-400">
-              Skills
+            <a href="#testimonial" className="hover:text-orange-400">
+              Testimonial
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-orange-400">
-              Contact
+            <a href="#hire" className="hover:text-orange-400">
+              Hire me
             </a>
           </li>
         </ul>
@@ -38,7 +43,7 @@ const Footer = () => {
         {/* Right: Social Links */}
         <div className="flex gap-4">
           <a
-            href="https://github.com/"
+            href="https://github.com/Haroldekemkpa"
             target="_blank"
             rel="noreferrer"
             className="hover:text-white"
@@ -46,7 +51,7 @@ const Footer = () => {
             <Github size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/harold-ekemkpa"
+            href="https://www.linkedin.com/in/harold-ekemkpa/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-white"
@@ -54,21 +59,21 @@ const Footer = () => {
             <Linkedin size={20} />
           </a>
           <a
-            href="https://twitter.com/"
+            href="https://x.com/harold_ekemkpa"
             target="_blank"
             rel="noreferrer"
             className="hover:text-white"
           >
             <Twitter size={20} />
           </a>
-          <a
+          {/* <a
             href="https://facebook.com/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-white"
           >
             <Facebook size={20} />
-          </a>
+          </a> */}
         </div>
       </div>
 
