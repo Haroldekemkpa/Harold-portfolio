@@ -38,7 +38,7 @@ export const CommentProvider = ({ children }) => {
         throw new Error(`Error fertiching comments: ${response.status}`);
       }
       const results = await response.json();
-      console.log(results);
+      // console.log(results);
       setHires(results.hires);
     } catch (error) {
       setError(error.nessage);
@@ -64,6 +64,7 @@ export const CommentProvider = ({ children }) => {
         comments,
         error,
         hires,
+        setComments,
       }}
     >
       {children}

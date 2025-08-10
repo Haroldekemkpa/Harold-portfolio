@@ -7,6 +7,7 @@ const Herobanner = () => {
     <>
       <div
         className={`${styles.hero} flex flex-col justify-center items-center`}
+        id="home"
       >
         <div
           className={`${styles.heroText} text-center text-[#fff] font-extrabold text-6xl antialiased space-y-4 px-8`}
